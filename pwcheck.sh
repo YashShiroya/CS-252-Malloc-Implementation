@@ -13,7 +13,7 @@ length=${#password}
 if [ $length -lt 6 -o $length -gt 32 ]; then
 	echo "Error: Password length invalid.";
 	strength=0;
-else:
+else
 #Add strength for length of string
 let strength=strength+length;
 
