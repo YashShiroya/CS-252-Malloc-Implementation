@@ -14,9 +14,12 @@ if [ $length -lt 6 -o $length -gt 32 ]; then
 	echo "Error: Password length invalid.";
 	strength=0;
 else
-#Add strength for length of string
+	#Add strength for length of string
 	let strength=strength+length;
-
+	
+	#Check for special characters
+	if [ egrep -q [#$\+%@] password]	
+	
 fi
 
 echo Strength: $strength;
