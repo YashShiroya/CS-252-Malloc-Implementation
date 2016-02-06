@@ -8,7 +8,7 @@ git commit -a -m "Lab 2 commit" >> .local.git.out
 strength=0
 password=$1
 length=${#password}
-if [ $length -lt 6 -a $length -gt 32 ]; then
+if [ $length -lt 6 -o $length -gt 32 ]; then
 	echo "Error: Password length invalid.";
 fi
 echo Strength: $strength
