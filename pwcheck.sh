@@ -18,5 +18,6 @@ else
 let strength=strength+length;
 
 fi
-echo Strength: $strength
+
+echo Strength: $strength;
 
