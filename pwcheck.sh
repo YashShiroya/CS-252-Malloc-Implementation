@@ -9,6 +9,6 @@ strength=0
 password=$1
 length=${#password}
 if [$length -gt 5]; then
-	echo greater than 5
+	echo "greater than 5";
 fi
 echo Strength: $strength
