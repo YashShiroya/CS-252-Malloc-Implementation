@@ -10,5 +10,7 @@ password=$1
 length=${#password}
 if [ $length -gt 5 -a $length -lt 32 ]; then
 	echo "Works great!";
+else
+	echo "Does not satisfy the condition";
 fi
 echo Strength: $strength
