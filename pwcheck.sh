@@ -8,7 +8,7 @@ git commit -a -m "Lab 2 commit" >> .local.git.out
 strength=0
 password=$1
 length=${#password}
-if [[length -gt 5]]; then
+if length -gt 5; then
 	echo greater than 5
 fi
 echo Strength: $strength
