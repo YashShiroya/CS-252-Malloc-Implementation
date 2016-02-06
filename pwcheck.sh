@@ -15,7 +15,7 @@ if [ $length -lt 6 -o $length -gt 32 ]; then
 	strength=0;
 else
 #Add strength for length of string
-let strength=strength+length;
+	let strength=strength+length;
 
 fi
 
