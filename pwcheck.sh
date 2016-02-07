@@ -20,7 +20,7 @@ else
 #Check for special characters
     if echo "$password" | egrep -q [#$\+%@]
     then
-    	let strength=strength+1	
+    	let strength=strength+5
 	fi	
 	
 fi
