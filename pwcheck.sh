@@ -18,7 +18,7 @@ else
 	let strength=strength+length;
 	
 #Check for special characters
-    if [ `grep -q [#$\+%@] $password` ]
+    if [ `egrep -s [#$\+%@] $password` ]
     then
     	let strength=strength+1	
 	fi	
