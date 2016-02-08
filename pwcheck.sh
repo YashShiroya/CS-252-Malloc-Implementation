@@ -18,13 +18,13 @@ else
 	let strength=strength+length;
 	
 	#Check for any digits
-	if egrep -q [0-9]+ < cat $password
+	if egrep -q [0-9]+ < $password
 	then
 		let strength=strength+5
 	fi
 	
 	#Check for special characters
-    if egrep -q [#$\+%@]+ < cat $password
+    if egrep -q [#$\+%@]+ < $password
     then
     	let strength=strength+5
 	fi	
