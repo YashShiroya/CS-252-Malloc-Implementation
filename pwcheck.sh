@@ -18,21 +18,20 @@ if [ $length -lt 6 -o $length -gt 32 ]; then
 fi
 
 #Add strength for length of string
-	let strength=strength+length;
-	echo Length: $length;
+let strength=strength+length;
+echo Length: $length;
 	
 #Check for any digits
-	if egrep -q [0-9] $1
-	then
-		let strength=strength+5
-	fi
+if egrep -q [0-9] $1
+then
+	let strength=strength+5
+fi
 	
 #Check for special characters
-   if egrep -q [#$\+%@] $1
-    then
-    	let strength=strength+5
-	fi	
-
-
+if egrep -q [#$\+%@] $1
+then
+  	let strength=strength+5
+fi	
+aaa
 echo Strength: $strength;
 
