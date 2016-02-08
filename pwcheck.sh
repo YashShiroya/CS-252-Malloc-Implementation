@@ -7,6 +7,7 @@ git commit -a -m "Lab 2 commit" >> .local.git.out
 #Your code here
 strength=0
 password=`cat $1`
+file=$1
 echo Reading text: $password
 length=${#password}
 
@@ -22,13 +23,13 @@ fi
 	echo Length: $length;
 	
 #Check for any digits
-	if egrep -q [0-9] $1
+	if egrep -q [0-9] file
 	then
 		let strength=strength+5
 	fi
 	
 #Check for special characters
-   if egrep -q [#$\+%@] $1
+   if egrep -q [#$\+%@] file
     then
     	let strength=strength+5
 	fi	
