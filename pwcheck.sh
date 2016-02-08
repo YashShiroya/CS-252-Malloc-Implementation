@@ -17,16 +17,18 @@ else
 	#Add strength for length of string
 	let strength=strength+length;
 	
-	#Check for special characters
-    if echo "$password" | `egrep -q [#$\+%@]+`
-    then
-    	let strength=strength+5
-	fi	
 	#Check for any digits
 	if echo "$password" | `egrep -q [0-9]+`
 	then
 		let strength=strength+5
 	fi
+	
+	#Check for special characters
+    if echo "$password" | `egrep -q [#$\+%@]+`
+    then
+    	let strength=strength+5
+	fi	
+	
 	
 fi
 
