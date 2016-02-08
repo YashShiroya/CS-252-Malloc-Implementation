@@ -25,12 +25,14 @@ echo Length: $length;
 if egrep -q [0-9] $1
 then
 	let strength=strength+5
+	echo "+5 points for any digits"
 fi
-	
+
 #Check for special characters
 if egrep -q [#$\+%@] $1
 then
   	let strength=strength+5
+  	echo "+5 points for special characters"
 fi	
 
 echo Strength: $strength;
