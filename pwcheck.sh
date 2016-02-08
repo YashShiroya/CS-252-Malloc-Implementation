@@ -6,7 +6,8 @@ git commit -a -m "Lab 2 commit" >> .local.git.out
 
 #Your code here
 strength=0
-length=${#$1}
+password < cat $1
+length=${#password}
 
 #Check length requirements
 if [ $length -lt 6 -o $length -gt 32 ]; then
@@ -20,13 +21,13 @@ fi
 	echo $length;
 	
 #Check for any digits
-	if egrep -q [0-9]+ < cat $1
+	if egrep -q [0-9]+ < $password
 	then
 		let strength=strength+5
 	fi
 	
 #Check for special characters
-   if egrep -q [#$\+%@]+ < cat $1
+   if egrep -q [#$\+%@]+ < $password
     then
     	let strength=strength+5
 	fi	
