@@ -28,7 +28,7 @@ fi
 	fi
 	
 #Check for special characters
-   if echp password | egrep -q [#$\+%@]+
+   if echo password | egrep -q [#$\+%@]+
     then
     	let strength=strength+5
 	fi	
