@@ -35,5 +35,5 @@ then
   	echo "+5 points for special characters"
 fi	
 
-echo Strength: $strength;
+echo Strength: "$strength\n";
 
