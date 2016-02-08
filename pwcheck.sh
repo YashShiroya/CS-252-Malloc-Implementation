@@ -19,7 +19,7 @@ fi
 
 #Add strength for length of string
 	let strength=strength+length;
-	echo $length;
+	echo Length: $length;
 	
 #Check for any digits
 	if echo password | egrep -q [0-9]+
