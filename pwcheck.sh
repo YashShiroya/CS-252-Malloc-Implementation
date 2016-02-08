@@ -6,7 +6,7 @@ git commit -a -m "Lab 2 commit" >> .local.git.out
 
 #Your code here
 strength=0
-cat $1 | password
+password < cat $1
 length=${#password}
 
 #Check length requirements
