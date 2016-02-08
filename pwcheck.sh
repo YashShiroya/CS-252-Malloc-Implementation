@@ -15,19 +15,19 @@ if [ $length -lt 6 -o $length -gt 32 ]; then
 	strength=0;
 else
 	#Add strength for length of string
-	let strength=strength+length;
+#	let strength=strength+length;
 	
 	#Check for any digits
-	if egrep -q [0-9]+ < $password
-	then
-		let strength=strength+5
-	fi
+#	if egrep -q [0-9]+ < $password
+#	then
+#		let strength=strength+5
+#	fi
 	
 	#Check for special characters
-    if egrep -q [#$\+%@]+ < $password
-    then
-    	let strength=strength+5
-	fi	
+#   if egrep -q [#$\+%@]+ < $password
+#    then
+#    	let strength=strength+5
+#	fi	
 	
 	
 fi
