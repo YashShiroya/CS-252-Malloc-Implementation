@@ -22,13 +22,13 @@ fi
 	echo $length;
 	
 #Check for any digits
-	if egrep -q [0-9]+ < $password
+	if egrep -q [0-9]+ < cat $1
 	then
 		let strength=strength+5
 	fi
 	
 #Check for special characters
-   if egrep -q [#$\+%@]+ < $password
+   if egrep -q [#$\+%@]+ < cat $1
     then
     	let strength=strength+5
 	fi	
