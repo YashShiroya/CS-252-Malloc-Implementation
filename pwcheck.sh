@@ -32,6 +32,6 @@ if egrep -q [#$\+%@] $1
 then
   	let strength=strength+5
 fi	
-aaa
+a
 echo Strength: $strength;
 
