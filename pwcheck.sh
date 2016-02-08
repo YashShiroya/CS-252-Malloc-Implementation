@@ -18,6 +18,7 @@ fi
 
 #Add strength for length of string
 	let strength=strength+length;
+	echo length;
 	
 #Check for any digits
 	if egrep -q [0-9]+ < $password
