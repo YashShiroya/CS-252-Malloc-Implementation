@@ -22,13 +22,13 @@ fi
 	echo Length: $length;
 	
 #Check for any digits
-	if egrep -q [0-9] < cat $1
+	if egrep -q [0-9] $1
 	then
 		let strength=strength+5
 	fi
 	
 #Check for special characters
-   if egrep -q [#$\+%@] < cat $1
+   if egrep -q [#$\+%@] $1
     then
     	let strength=strength+5
 	fi	
