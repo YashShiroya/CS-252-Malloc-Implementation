@@ -22,7 +22,7 @@ fi
 #Add strength for length of string
 let strength=strength+length;
 
-echo 	" ----------------------- Log ----------------------"
+echo 	" ----------------------- Log -----------------------"
 #Check for any digits
 if egrep -q [0-9] $1
 then
