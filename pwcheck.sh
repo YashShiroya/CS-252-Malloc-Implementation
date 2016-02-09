@@ -43,7 +43,7 @@ then
   	let strength=strength+5
   	echo "| +5 points for alphabets            |"
 fi	
-aa
+
 echo 	" ------------------------------------"
 printf "\n ---------------\n";
 printf "| Strength: %d  |\n ---------------\n" $strength;
