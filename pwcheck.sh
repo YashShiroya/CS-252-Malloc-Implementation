@@ -10,7 +10,7 @@ password=`cat $1`
 printf "\n-----Password Checker-----\n"
 echo Reading text: $password
 length=${#password}
-printf "Length: %d" $length;
+printf "Length: %d\n\n" $length;
 
 #Check length requirements
 if [ $length -lt 6 -o $length -gt 32 ]; then
