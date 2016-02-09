@@ -21,7 +21,8 @@ fi
 
 #Add strength for length of string
 let strength=strength+length;
-	
+
+printf 	
 #Check for any digits
 if egrep -q [0-9] $1
 then
@@ -44,6 +45,6 @@ then
 fi	
 
 printf "\n ---------------\n";
-printf "| Strength: %d  |\n ---------------\n" $strength;
+printf "| Strength: %d |\n ---------------\n" $strength;
 
 
