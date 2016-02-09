@@ -9,9 +9,9 @@ strength=0
 password=`cat $1`
 printf "\n-----------------Password Checker-------------------\n"
 
-printf "\nReading text: %s\n" $password;
+printf "\n\tReading text: %s\n" $password;
 length=${#password}
-printf "Length: %d\n\n" $length;
+printf "\tLength: %d\n\n" $length;
 
 #Check length requirements
 if [ $length -lt 6 -o $length -gt 32 ]; then
