@@ -50,6 +50,24 @@ then
 	echo "| -10 points for recurring consecutive alphabets   |"
 fi
 
+if [ `egrep -q [a-z][a-z][a-z] $1` ]
+then
+	let strength=strength-3
+	echo "| -3 points for 3 consecutive lower-case alphabets  |"
+fi
+
+if [ `egrep -q [A-Z][A-Z][A-Z] $1`  ]
+then
+	let strength=strength-3
+	echo "| -3 points for 3 consecutive upper-case alphabets  |"
+fi
+
+if [ `egrep -q [0-9][0-9][0-9] $1`  ]
+then
+	let strength=strength-3
+	echo "| -3 points for 3 consecutive digits                |"
+fi
+
 echo 	" --------------------------------------------------"
 printf "\n ---------------\n";
 printf "| Strength: %d  |\n ---------------\n" $strength;
