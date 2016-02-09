@@ -36,5 +36,12 @@ then
   	echo "+5 points for special characters"
 fi	
 
+#Check for alphabets
+if egrep -q [a-z] $1
+then
+  	let strength=strength+5
+  	echo "+5 points for alphabets"
+fi	
+
 printf "Strength: %d\n\n" $strength;
 
