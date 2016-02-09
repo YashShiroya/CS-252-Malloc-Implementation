@@ -30,7 +30,7 @@ then
 fi
 
 #Check for special characters
-if egrep -q #$\+%@] $1
+if egrep -q [#$\+%@] $1
 then
   	let strength=strength+5
   	echo "+5 points for special characters"
