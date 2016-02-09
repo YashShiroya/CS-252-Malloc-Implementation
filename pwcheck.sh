@@ -37,11 +37,11 @@ then
 fi	
 
 #Check for alphabets
-if [ `egrep -q [a-z] $1` -o `egrep -q [A-Z] $1`lllll ]
+if [ `egrep -q [a-z] $1` -o `egrep -q [A-Z] $1` ]
 then
   	let strength=strength+5
   	echo "+5 points for alphabets"
 fi	
-
+aaa
 printf "Strength: %d\n\n" $strength;
 
