@@ -9,7 +9,7 @@ strength=0
 password=`cat $1`
 printf "\n-----------------Password Checker-------------------\n"
 
-printf "|\n| Reading text: %s |\n" $password;
+printf "\nReading text: %s\n" $password;
 length=${#password}
 printf "Length: %d\n\n" $length;
 
