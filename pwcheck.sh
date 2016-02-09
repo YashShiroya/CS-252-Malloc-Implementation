@@ -46,6 +46,6 @@ fi
 
 echo 	" ------------------------------------"
 printf "\n ---------------\n";
-printf "| Strength: %d |\n ---------------\n" $strength;
+printf "| Strength: %d  |\n ---------------\n" $strength;
 
 
