@@ -22,28 +22,29 @@ fi
 #Add strength for length of string
 let strength=strength+length;
 
-printf 	
+printf 	"----------------- Log ----------------"
 #Check for any digits
 if egrep -q [0-9] $1
 then
 	let strength=strength+5
-	echo "+5 points for any digits"
+	echo "| +5 points for any digits           |"
 fi
 
 #Check for special characters
 if egrep -q [#$\+%@] $1
 then
   	let strength=strength+5
-  	echo "+5 points for special characters"
+  	echo "| +5 points for special characters   |"
 fi	
 
 #Check for alphabets
 if [ `egrep -q [a-z] $1` -o `egrep -q [A-Z] $1` ]
 then
   	let strength=strength+5
-  	echo "+5 points for alphabets"
+  	echo "| +5 points for alphabets            |"
 fi	
 
+printf 	"--------------------------------------"
 printf "\n ---------------\n";
 printf "| Strength: %d |\n ---------------\n" $strength;
 
