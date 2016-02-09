@@ -44,7 +44,7 @@ then
   	echo "| +5 points for alphabets                         |"
 fi	
 
-if [ `egrep -q [a-z]+` -o `egrep -q [A-Z]` ]
+if [ `egrep -q [a-z]+ $1` -o `egrep -q [A-Z]+ $1` ]
 then
 	let strength=strength-10
 	echo "| -10 points for recurring consecutive alphabets  |"
