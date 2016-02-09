@@ -43,7 +43,7 @@ then
   	echo "+5 points for alphabets"
 fi	
 
-print "--------------"
+echo "--------------"
 printf "Strength: %d  |\n--------------------------\n" $strength;
-print "--------------"
+echo "--------------"
 
