@@ -44,6 +44,6 @@ then
 fi	
 
 echo "--------------"
-printf "Strength: %d  |\n--------------\n" $strength;
+printf "| Strength: %d  |\n--------------\n" $strength;
 
 
