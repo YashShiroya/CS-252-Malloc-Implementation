@@ -27,27 +27,27 @@ echo 	" ----------------------- Log ----------------------"
 if egrep -q [0-9] $1
 then
 	let strength=strength+5
-	echo "| +5 points for any digits                         |"
+	echo "| +5 points for any digits                          |"
 fi
 
 #Check for special characters
 if egrep -q [#$\+%@] $1
 then
   	let strength=strength+5
-  	echo "| +5 points for special characters                 |"
+  	echo "| +5 points for special characters                  |"
 fi	
 
 #Check for alphabets
 if [ `egrep -q [a-z] $1` -o `egrep -q [A-Z] $1` ]
 then
   	let strength=strength+5
-  	echo "| +5 points for alphabets                          |"
+  	echo "| +5 points for alphabets                           |"
 fi	
 
 if [ `egrep -q [a-z]+ $1` -o `egrep -q [A-Z]+ $1` ]
 then
 	let strength=strength-10
-	echo "| -10 points for recurring consecutive alphabets   |"
+	echo "| -10 points for recurring consecutive alphabets    |"
 fi
 
 if egrep -q [a-z][a-z][a-z] $1
