@@ -73,7 +73,7 @@ then
 	echo "| -3 points for 3 consecutive digits                |"
 fi
 
-echo 	" --------------------------------------------------"
+echo 	" ---------------------------------------------------"
 printf "\n ---------------\n";
 printf "| Strength: %d  |\n ---------------\n" $strength;
 
