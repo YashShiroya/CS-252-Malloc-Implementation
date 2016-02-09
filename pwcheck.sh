@@ -7,7 +7,7 @@ git commit -a -m "Lab 2 commit" >> .local.git.out
 #Your code here
 strength=0
 password=`cat $1`
-printf "\n-----Password Checker-----\n"
+printf "\n----------------Password Checker-------------------\n"
 printf "\nReading text: %s\n" $password;
 length=${#password}
 printf "Length: %d\n\n" $length;
