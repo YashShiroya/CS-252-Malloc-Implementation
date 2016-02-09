@@ -22,7 +22,7 @@ fi
 #Add strength for length of string
 let strength=strength+length;
 
-echo 	" ---------------- Log ---------------"
+echo 	" ----------------------- Log ----------------------"
 #Check for any digits
 if egrep -q [0-9] $1
 then
@@ -50,7 +50,7 @@ then
 	echo "| -10 points for recurring consecutive alphabets  |"
 fi
 
-echo 	" ------------------------------------"
+echo 	" --------------------------------------------------"
 printf "\n ---------------\n";
 printf "| Strength: %d  |\n ---------------\n" $strength;
 
