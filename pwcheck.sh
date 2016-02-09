@@ -10,6 +10,7 @@ password=`cat $1`
 printf "\n-----Password Checker-----\n"
 echo Reading text: $password
 length=${#password}
+echo Length: $length;
 
 #Check length requirements
 if [ $length -lt 6 -o $length -gt 32 ]; then
@@ -20,7 +21,6 @@ fi
 
 #Add strength for length of string
 let strength=strength+length;
-echo Length: $length;
 	
 #Check for any digits
 if egrep -q [0-9] $1
