@@ -44,7 +44,7 @@ then
   	let strength=strength+5
   	echo "| +5 points for alphabets                           |"
 fi	
-
+aaa
 #Check for
 if  [ `egrep -q '([a-z])\1+' $1` -o  `egrep -q '([A-Z])\1+' $1` -o `egrep -q '([0-9])\1+' $1` ]
 then
