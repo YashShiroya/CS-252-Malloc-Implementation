@@ -12,7 +12,7 @@ printf "\n-----------------Password Checker-------------------\n"
 printf "\n\tReading text: %s\n" $password;
 length=${#password}
 printf "\tLength: %d\n\n" $length;
-aaaa
+
 #Check length requirements
 if [ $length -lt 6 -o $length -gt 32 ]; then
 	echo "Error: Password length invalid."
