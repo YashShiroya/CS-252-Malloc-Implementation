@@ -55,7 +55,7 @@ then
 
 fi
 
-if [ `egrep  '([a-z])\1+' $1` -a `$flag -eq 0` ]
+if [[ `egrep  '([a-z])\1+' $1` -a `$flag -eq 0` ]]
 then
 	let flag=1
 	let strength=strength-10
