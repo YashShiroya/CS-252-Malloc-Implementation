@@ -46,11 +46,11 @@ then
 fi	
 
 #Check for
-#if [ `egrep -q [a-z]+ $1` -o `egrep -q [A-Z]+ $1` ]
-#then
-#	let strength=strength-10
-#	echo "| -10 points for recurring consecutive alphabets    |"
-#fi
+if egrep -q ([a-z])\1+ $1
+then
+	let strength=strength-10
+	echo "| -10 points for recurring consecutive alphabets    |"
+fi
 
 #Check for 3 consecutive lower-case alphabets
 if egrep -q [a-z][a-z][a-z] $1
