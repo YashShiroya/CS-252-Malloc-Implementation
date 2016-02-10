@@ -23,7 +23,7 @@ fi
 #Add strength for length of string
 let strength=strength+length;
 
-echo 	" ----------------------- Log -----------------------"
+echo 	" --------------------------- Log --------------------------"
 #Check for any digits
 if egrep -q [0-9] $1
 then
@@ -46,7 +46,7 @@ then
 fi	
 
 
-if egrep -q '([0-9])\1+' $1
+if [ `egrep -q '([0-9])\1+' $1` -o `egrep -q '([a-z])\1+' $1` -o `egrep -q '([A-Z])\1+' $1` ]
 then
 	let strength=strength-10
 	echo "| -10 points for recurring consecutive digit              |"
@@ -74,7 +74,7 @@ then
 	echo "| -3 points for 3 consecutive digits                      |"
 fi
 
-echo 	" ---------------------------------------------------"
+echo 	" ----------------------------------------------------------"
 printf "\n ---------------\n";
 printf "| Strength: %d  |\n ---------------\n" $strength;
 
