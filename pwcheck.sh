@@ -45,11 +45,8 @@ then
   	echo "| +5 points for alphabets                                 |"
 fi	
 
-regex1=`egrep -q '([0-9])\1+' $1`
-regex2=`egrep -q '([a-z])\1+' $1`
-regex3=`egrep -q '([A-Z])\1+' $1`
 
-if [ $regex1 -o $regex2 -o $regex3 ]
+if [ `egrep -q '([0-9])\1+' $1` -o `egrep -q '([a-z])\1+' $1` -o `egrep -q '([A-Z])\1+' $1` ]
 then
 	let strength=strength-10
 	echo "| -10 points for recurring consecutive digit              |"
