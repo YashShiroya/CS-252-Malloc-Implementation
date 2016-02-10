@@ -47,27 +47,10 @@ fi
 
 flag=0
 
-if egrep  '([0-9])\1+' $1 
+if [ `egrep  '([0-9])\1+' $1` ] || [ `egrep  '([a-z])\1+' $1` ] || [ `egrep  '([A-Z])\1+' $1` ]
 then
-	let flag=1
 	let strength=strength-10
 	echo "| -10 points for recurring consecutive digit              |"
-
-fi
-
-if [[ `egrep  '([a-z])\1+' $1` -a `$flag -eq 0` ]]
-then
-	let flag=1
-	let strength=strength-10
-	echo "| -10 points for recurring consecutive lc alp             |"
-
-fi
-
-if [ `egrep  '([A-Z])\1+' $1` -a `$flag -eq 0` ]
-then
-	let flag=1
-	let strength=strength-10
-	echo "| -10 points for recurring consecutive uc alp             |"
 
 fi
 
