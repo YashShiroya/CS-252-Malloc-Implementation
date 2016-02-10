@@ -76,7 +76,7 @@ then
 fi
 
 echo 	" ---------------------------------------------------------"
-printf "\n\t ---------------------\n";
-printf "\t| Password Score: %d  |\n \t ---------------------\n" $strength;
+printf "\n\t\t ---------------------\n";
+printf "\t\t| Password Score: %d  |\n \t\t ---------------------\n" $strength;
 
 
