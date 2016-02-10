@@ -46,7 +46,7 @@ then
 fi	
 
 
-if [ `egrep -q '([0-9])\1+' $1` -o `egrep -q '([a-z])\1+' $1` -o `egrep -q '([A-Z])\1+' $1` ]
+if [ `egrep  '([0-9])\1+' $1` -o `egrep  '([a-z])\1+' $1` -o `egrep  '([A-Z])\1+' $1` ]
 then
 	let strength=strength-10
 	echo "| -10 points for recurring consecutive digit              |"
