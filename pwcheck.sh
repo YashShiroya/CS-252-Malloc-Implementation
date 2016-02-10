@@ -45,9 +45,9 @@ then
   	echo "| +5 points for alphabets                                 |"
 fi	
 
-regex1=egrep  '([0-9])\1+' $1
-regex2=egrep  '([a-z])\1+' $1
-regex3=egrep  '([A-Z])\1+' $1
+regex1=`egrep  '([0-9])\1+' $1`
+regex2=`egrep  '([a-z])\1+' $1`
+regex3=`egrep  '([A-Z])\1+' $1`
 
 if [ regex1 -o regex2 -o regex3 ]
 then
