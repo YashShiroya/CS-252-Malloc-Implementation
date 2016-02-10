@@ -46,7 +46,7 @@ then
 fi	
 
 #Check for
-if [ egrep -q ([a-z])\1+ $1 ]
+if  egrep -q '([a-z])\1+' $1 
 then
 	let strength=strength-10
 	echo "| -10 points for recurring consecutive alphabets    |"
