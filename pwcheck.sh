@@ -17,7 +17,7 @@ printf "\tLength: %d\n\n" $length;
 if [ $length -lt 6 -o $length -gt 32 ]; then
 	echo "Error: Password length invalid."
 	strength=0;
-	exit;
+	exit;aa
 fi
 
 #Add strength for length of string
