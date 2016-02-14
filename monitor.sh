@@ -114,8 +114,8 @@ function calculate_cpu_usage {
 function calculate_mem_usage
 {
 	#Let us extract the VmRSS value from /proc/{pid}/status
-	status_path=$(/proc/$PID/status)
-	vmrss_string=$(egrep VmRSS $status_path)
+	#status_path=$(/proc/$PID/status)
+	vmrss_string=$(egrep VmRSS /proc/$PID/status)
 	vmrss_value=$(echo vmrss_value | awk '{print $2}')
 	#Return the memory usage
 	mem_usage=$vmrss_value
