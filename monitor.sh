@@ -127,11 +127,16 @@ function notify
 	cpu_usage_int=$(printf "%.f" $1)
 
 	#Check if the process has exceeded the thresholds
+	if [ cpu_usage_int -gt $CPU_THRESHOLD ]
+	then
+		echo "Threshold reached, Sending Email to $USER"
+		latest_file=$(ls -t reports_dir | head -1)
+		/usr/bin/mailx -s "CPU Threshold reached" $USER < /reports_dir/$latest_file
+	fi
 
 	#Check if process exceeded its CPU or MEM thresholds. If that is the case, send an email to $USER containing the last report
 
 }
-
 
 check_arguments $# $@
 
