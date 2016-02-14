@@ -48,8 +48,11 @@ function init
 function jiffies_to_percentage {
 	
 	#Get the function arguments (oldstime, oldutime, newstime, newutime)
+	
 	let diff_stime=$4-$2
+	>&2 echo $diff_stime
 	let diff_utime=$3-$1
+	>&2 echo $diff_utime
 	#Calculate the elpased ticks between newstime and oldstime (diff_stime), and newutime and oldutime (diff_stime)
 
 	#You will use the following command to calculate the CPU usage percentage. $TIME_INTERVAL is the user-provided time_interval
