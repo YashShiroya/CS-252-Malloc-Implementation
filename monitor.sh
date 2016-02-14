@@ -23,8 +23,7 @@ function check_arguments {
 	CPU_THRESHOLD=$4
 
 	#Extract the memory threshold (part 2 of the script)
-
-
+	
 }
 
 function init
@@ -115,9 +114,11 @@ function calculate_cpu_usage {
 function calculate_mem_usage
 {
 	#Let us extract the VmRSS value from /proc/{pid}/status
-
-
+	status_path=$(/proc/$PID/status)
+	vmrss_string=$(egrep VmRSS $status_path)
+	vmrss_value=$(echo vmrss_value | awk '{print $2}')
 	#Return the memory usage
+	mem_usage=$vmrss_value
 	echo "$mem_usage"
 }
 
