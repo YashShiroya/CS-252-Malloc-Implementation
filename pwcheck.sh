@@ -50,7 +50,7 @@ flag=0
 if [ `egrep  '([0-9])\1+' $1` ] || [ `egrep  '([a-z])\1+' $1` ] || [ `egrep  '([A-Z])\1+' $1` ]
 then
 	let strength=strength-10
-	echo "| -10 points for recurring consecutive digit              |"
+	echo "| -10 points for recurring consecutive alphanum           |"
 
 fi
 
