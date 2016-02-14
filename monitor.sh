@@ -48,7 +48,8 @@ function init
 function jiffies_to_percentage {
 	
 	#Get the function arguments (oldstime, oldutime, newstime, newutime)
-
+	let diff_stime=$4-$2
+	let diff_utime=$3-$1
 	#Calculate the elpased ticks between newstime and oldstime (diff_stime), and newutime and oldutime (diff_stime)
 
 	#You will use the following command to calculate the CPU usage percentage. $TIME_INTERVAL is the user-provided time_interval
@@ -97,7 +98,7 @@ function calculate_cpu_usage {
 	#The values we got so far are all in jiffier (not Hertz), we need to convert them to percentages, we will use the function
 	#jiffies_to_percentage
 
-	#percentage=$(jiffies_to_percentage $oldutime $oldstime $newutime $newstime)
+	percentage=$(jiffies_to_percentage $oldutime $oldstime $newutime $newstime)
 
 
 	#Return the usage percentage
@@ -145,6 +146,7 @@ do
 	generate_report $cpu_usage $mem_usage
 
 	#Call the notify function to send an email to $USER if the thresholds were exceeded
+	#Uncomment
 	#notify $cpu_usage $mem_usage
 
 done
