@@ -14,7 +14,7 @@ length=${#password}
 printf "\tLength: %d\n\n" $length;
 
 #Check length requirements
-if [ `$length -lt 6` ] || [ `$length -gt 32` ]; then
+if [ $length -lt 6 ] || [ $length -gt 32 ]; then
 	echo "Error: Password length invalid."
 	strength=0;
 	exit;
