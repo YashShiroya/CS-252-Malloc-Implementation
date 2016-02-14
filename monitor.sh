@@ -74,10 +74,10 @@ function generate_report {
 	#You may uncomment the following lines to generate the report. Make sure the first argument to this function is the CPU usage
 	#and the second argument is the memory usage
 
-	#echo "PROCESS ID: $PID" > ./reports_dir/$file_name
-	#echo "PROCESS NAME: $process_name" >> ./reports_dir/$file_name
-	#echo "CPU USAGE: $1 %" >> ./reports_dir/$file_name
-	#echo "MEMORY USAGE: $2 kB" >> ./reports_dir/$file_name
+	echo "PROCESS ID: $PID" > ./reports_dir/$file_name
+	echo "PROCESS NAME: $process_name" >> ./reports_dir/$file_name
+	echo "CPU USAGE: $1 %" >> ./reports_dir/$file_name
+	echo "MEMORY USAGE: $2 kB" >> ./reports_dir/$file_name
 }
 
 #Returns a percentage representing the CPU usage
@@ -89,11 +89,15 @@ function calculate_cpu_usage {
 
 
 	#First, get the current utime and stime (oldutime and oldstime) from /proc/{pid}/stat
-
+	oldutime=$(cat /proc/$PID/stat | awk '{print $14}')
+	oldstime=$(cat /proc/$PID/stat | awk '{print $15}')
 
 	#Sleep for time_interval
+	sleep $TIME_INTERVAL
 
 	#Now, get the current utime and stime (newutime and newstime) /proc/{pid}/stat
+	newutime=$(cat /proc/$PID/stat | awk '{print $14}')
+	newstime=$(cat /proc/$PID/stat | awk '{print $15}')
 
 	#The values we got so far are all in jiffier (not Hertz), we need to convert them to percentages, we will use the function
 	#jiffies_to_percentage
