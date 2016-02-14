@@ -154,6 +154,6 @@ do
 
 	#Call the notify function to send an email to $USER if the thresholds were exceeded
 	#Uncomment
-	#notify $cpu_usage $mem_usage
+	notify $cpu_usage $mem_usage
 
 done
