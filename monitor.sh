@@ -9,7 +9,7 @@ git commit -a -m "Lab 2 commit" >> .local.git.out
 
 # cycles per second
 hertz=$(getconf CLK_TCK)
-
+MEM_THRESHOLD=0
 function check_arguments {
 
 
