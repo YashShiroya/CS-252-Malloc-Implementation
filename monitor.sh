@@ -23,6 +23,7 @@ function check_arguments {
 	CPU_THRESHOLD=$4
 
 	#Extract the memory threshold (part 2 of the script)
+	aaaaaaaaa
 	
 }
 
