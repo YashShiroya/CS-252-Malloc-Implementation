@@ -85,9 +85,9 @@ function generate_report {
 	#and the second argument is the memory usage
 	
 	echo "Hello $USER," > ./reports_dir/$file_name
-	echo " " > ./reports_dir/$file_name
-	echo "WARNING: THRESHOLD REACHED" > ./reports_dir/$file_name
-	echo "PROCESS ID: $PID" > ./reports_dir/$file_name
+	echo " " >> ./reports_dir/$file_name
+	echo "WARNING: THRESHOLD REACHED" >> ./reports_dir/$file_name
+	echo "PROCESS ID: $PID" >> ./reports_dir/$file_name
 	echo "PROCESS NAME: $process_name" >> ./reports_dir/$file_name
 	echo "CPU USAGE: $1 %" >> ./reports_dir/$file_name
 	echo "MEMORY USAGE: $2 kB" >> ./reports_dir/$file_name
