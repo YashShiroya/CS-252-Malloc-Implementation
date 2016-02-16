@@ -28,6 +28,10 @@ function check_arguments {
 		MEM_THRESHOLD=$6
 	fi
 	
+	if [ "$1" -gt 7 ]
+	then
+		exit
+	fi
 }
 
 function init
@@ -79,7 +83,10 @@ function generate_report {
 
 	#You may uncomment the following lines to generate the report. Make sure the first argument to this function is the CPU usage
 	#and the second argument is the memory usage
-
+	
+	echo "Hello $USER," > ./reports_dir/$file_name
+	echo " " > ./reports_dir/$file_name
+	echo "WARNING: THRESHOLD REACHED" > ./reports_dir/$file_name
 	echo "PROCESS ID: $PID" > ./reports_dir/$file_name
 	echo "PROCESS NAME: $process_name" >> ./reports_dir/$file_name
 	echo "CPU USAGE: $1 %" >> ./reports_dir/$file_name
@@ -123,7 +130,7 @@ function calculate_mem_usage
 	vmrss_value=$(echo $vmrss_string | awk '{print $2}')
 	#Return the memory usage
 	mem_usage=$vmrss_value
-	>&2 echo $vmrss_value
+	#>&2 echo $vmrss_value
 	echo "$mem_usage"
 }
 
