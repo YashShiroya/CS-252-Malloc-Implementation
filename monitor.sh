@@ -80,7 +80,7 @@ function generate_report {
 	if [ $max_reports_counter -gt $MAXIMUM_REPORTS ]
 	then
 		 remove_file=$(ls -t reports_dir | tail -1)
-		 rm $remove_file
+		 rm ./reports_dir/$remove_file
 		 
 	fi
 	
