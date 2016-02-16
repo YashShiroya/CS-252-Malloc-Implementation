@@ -123,6 +123,7 @@ function calculate_mem_usage
 	vmrss_value=$(echo vmrss_value | awk '{print $2}')
 	#Return the memory usage
 	mem_usage=$vmrss_value
+	>&2 echo $mem_usage
 	echo "$mem_usage"
 }
 
