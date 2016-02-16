@@ -96,6 +96,7 @@ function generate_report {
 	echo "Hello $USER," > ./reports_dir/$file_name
 	echo " " >> ./reports_dir/$file_name
 	echo "Warning! Threshold Reached" >> ./reports_dir/$file_name
+	echo " " >> ./reports_dir/$file_name
 	echo "Log Generated:" >> ./reports_dir/$file_name
 	echo " " >> ./reports_dir/$file_name
 	echo "PROCESS ID: $PID" >> ./reports_dir/$file_name
