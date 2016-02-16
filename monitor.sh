@@ -120,10 +120,10 @@ function calculate_mem_usage
 	#Let us extract the VmRSS value from /proc/{pid}/status
 	#status_path=$(/proc/$PID/status)
 	vmrss_string=$(egrep VmRSS /proc/$PID/status)
-	vmrss_value=$(echo vmrss_value | awk '{print $2}')
+	vmrss_value=$(echo $vmrss_string | awk '{print $2}')
 	#Return the memory usage
 	mem_usage=$vmrss_value
-	>&2 echo $mem_usage
+	>&2 echo $vmrss_value
 	echo "$mem_usage"
 }
 
