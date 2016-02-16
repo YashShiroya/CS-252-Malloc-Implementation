@@ -88,6 +88,7 @@ function generate_report {
 	echo " " >> ./reports_dir/$file_name
 	echo "Warning! Threshold Reached" >> ./reports_dir/$file_name
 	echo "Log Generated:" >> ./reports_dir/$file_name
+	echo " " >> ./reports_dir/$file_name
 	echo "PROCESS ID: $PID" >> ./reports_dir/$file_name
 	echo "PROCESS NAME: $process_name" >> ./reports_dir/$file_name
 	echo "CPU USAGE: $1 %" >> ./reports_dir/$file_name
@@ -145,7 +146,7 @@ function notify
 	then
 		echo "Threshold reached, Sending Email to $USER"
 		latest_file=$(ls -t reports_dir | head -1)
-		/usr/bin/mailx -s "CPU Threshold reached" $USER < ./reports_dir/$latest_file
+		/usr/bin/mailx -s "CPU Threshold reached" krustagi < ./reports_dir/$latest_file
 	fi
 
 	#Check if process exceeded its CPU or MEM thresholds. If that is the case, send an email to $USER containing the last report
