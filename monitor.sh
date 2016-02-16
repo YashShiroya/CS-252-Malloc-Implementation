@@ -143,7 +143,7 @@ function notify
 	cpu_usage_int=$(printf "%.f" $1)
 	mem_usage_int=$2
 	#Check if the process has exceeded the thresholds
-	if [ check -eq 1 ] && [ $mem_usage_int -gt $MEM_THRESHOLD ]
+	if [ $check -eq 1 ] && [ $mem_usage_int -gt $MEM_THRESHOLD ]
 	then
 		echo "Threshold reached, Sending Email to $USER"
 		latest_file=$(ls -t reports_dir | head -1)
