@@ -24,7 +24,7 @@ function check_arguments {
 	#Extract the memory threshold (part 2 of the script)
 	if [ "$1" -eq 7 ]
 	then
-		let check=1;
+		check=1;
 		MEM_THRESHOLD=$6
 	fi
 	
@@ -138,11 +138,20 @@ function calculate_mem_usage
 
 function notify
 {
+	check_if=0
 	#We convert the float representating the CPU usage to an integer for convenience. We will compare $usage_int to $CPU_THRESHOLD
 	cpu_usage_int=$(printf "%.f" $1)
 	mem_usage_int=$2
 	#Check if the process has exceeded the thresholds
-	if [ $cpu_usage_int -gt $CPU_THRESHOLD ] || [ $mem_usage_int -gt $MEM_THRESHOLD ]
+	if [check -eq 1] && [ $mem_usage_int -gt $MEM_THRESHOLD ]
+	then
+		echo "Threshold reached, Sending Email to $USER"
+		latest_file=$(ls -t reports_dir | head -1)
+		/usr/bin/mailx -s "CPU Threshold reached" $USER < ./reports_dir/$latest_file
+		check_if=1
+	fi
+	
+	if [ $check_if -eq 0 ] && [ $cpu_usage_int -gt $CPU_THRESHOLD ] 
 	then
 		echo "Threshold reached, Sending Email to $USER"
 		latest_file=$(ls -t reports_dir | head -1)
