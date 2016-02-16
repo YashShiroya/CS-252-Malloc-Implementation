@@ -9,7 +9,7 @@ git commit -a -m "Lab 2 commit" >> .local.git.out
 
 # cycles per second
 hertz=$(getconf CLK_TCK)
-
+check=0
 function check_arguments {
 
 
@@ -24,6 +24,7 @@ function check_arguments {
 	#Extract the memory threshold (part 2 of the script)
 	if [ "$1" -eq 7 ]
 	then
+		let check=1;
 		MEM_THRESHOLD=$6
 	fi
 	
@@ -139,6 +140,7 @@ function notify
 	fi
 
 	#Check if process exceeded its CPU or MEM thresholds. If that is the case, send an email to $USER containing the last report
+	
 }
 
 check_arguments $# $@
