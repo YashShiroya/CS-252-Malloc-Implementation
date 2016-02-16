@@ -99,7 +99,7 @@ function generate_report {
 	echo "Log Generated:" >> ./reports_dir/$file_name
 	echo " " >> ./reports_dir/$file_name
 	echo "PROCESS ID: $PID" >> ./reports_dir/$file_name
-	echo "<b>PROCESS NAME:</b> $process_name" >> ./reports_dir/$file_name
+	echo "PROCESS NAME: $process_name" >> ./reports_dir/$file_name
 	echo "CPU USAGE: $1 %" >> ./reports_dir/$file_name
 	echo "MEMORY USAGE: $2 kB" >> ./reports_dir/$file_name
 }
